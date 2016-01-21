@@ -17,7 +17,7 @@ public class ItemWrapper extends Item
 	    if (this.quality > 0)
 	    {
 	      if (this.sellIn>=0)
-	       addQuality(1);
+	       addQuality(DEFAULT_QUALITY_INCREASE);
 	      else
 	        addQuality(2);
 	    }
@@ -25,15 +25,15 @@ public class ItemWrapper extends Item
 
 	  public void increaseQuality()
 	  {
-	    if (getQuality() < 50)
+	    if (getQuality() < MAX_QUALITY)
 	    {
-	      this.quality += 1;
+	      this.quality += DEFAULT_QUALITY_INCREASE;
 	    }
 	  }
 
 	  public void decreaseSellIn()
 	  {
-	    setSellIn(getSellIn() - 1);
+	    setSellIn(getSellIn() - DEFAULT_QUALITY_DECREASE);
 	  }
 
 	  private void addQuality(int value)

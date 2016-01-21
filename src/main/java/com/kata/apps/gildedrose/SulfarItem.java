@@ -8,27 +8,17 @@ public class SulfarItem extends ItemWrapper
     super(name, sellIn, quality);
  
   }
+  	@Override
+	public void decreaseQuality()
+	  {}
 
-  @Override
-  public void increaseQuality()
-  {
-    //No change
-    
-  }
+  	@Override  
+  	public void increaseQuality()
+	  {}
 
-  @Override
-  public void decreaseQuality()
-  {
-    //No change    
-    
-  }
-
-  @Override
-  public void decreaseSellIn()
-  {
-    //No change
-    
-  }
+  	@Override  
+  	public void decreaseSellIn()
+	  {}
   
 
 }

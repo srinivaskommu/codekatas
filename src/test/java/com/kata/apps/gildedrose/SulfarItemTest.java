@@ -10,7 +10,7 @@ public class SulfarItemTest
 	  @Test
 	  public void sulfuras_No_ChangeQuality_No_Sellin()
 	  {
-	    Item[] items = new Item[] { new SulfarItem("Sulfuras, Hand of Ragnaros", 0, 80) };
+	    Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 0, 80) };
 	    GildedRose app = new GildedRose(items);
 	    app.updateQuality();
 	    assertEquals("Sulfuras, Hand of Ragnaros", app.items.get(0).getName());

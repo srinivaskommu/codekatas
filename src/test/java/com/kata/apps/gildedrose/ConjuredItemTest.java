@@ -8,7 +8,7 @@ public class ConjuredItemTest {
 	@Test
 	public void conjured_Expect_Reduciton_In_Quaity() {
 
-		Item[] items = new Item[] { new ConjuredItem("Conjured Mana Cake", 3, 6) };
+		Item[] items = new Item[] { new Item("Conjured Mana Cake", 3, 6) };
 		GildedRose app = new GildedRose(items);
 		app.updateQuality();
 		assertEquals("Conjured Mana Cake", app.items.get(0).getName());
