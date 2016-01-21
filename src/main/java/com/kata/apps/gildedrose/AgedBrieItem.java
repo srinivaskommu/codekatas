@@ -1,6 +1,6 @@
 package com.kata.apps.gildedrose;
 
-public class AgedBrieItem extends Item
+public class AgedBrieItem extends ItemWrapper
 {
 
   public AgedBrieItem(String name, int sellIn, int quality)

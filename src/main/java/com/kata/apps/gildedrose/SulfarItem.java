@@ -1,6 +1,6 @@
 package com.kata.apps.gildedrose;
 
-public class SulfarItem extends Item
+public class SulfarItem extends ItemWrapper
 {
 
   public SulfarItem(String name, int sellIn, int quality)

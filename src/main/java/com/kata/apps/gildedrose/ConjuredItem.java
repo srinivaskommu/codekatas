@@ -1,6 +1,6 @@
 package com.kata.apps.gildedrose;
 
-public class ConjuredItem extends Item
+public class ConjuredItem extends ItemWrapper
 {
   public ConjuredItem(String name, int sellIn, int quality)
   {
@@ -27,5 +27,13 @@ public class ConjuredItem extends Item
     }
 
   }
+
+
+
+@Override
+public void increaseQuality() {
+	// TODO Auto-generated method stub
+	
+}
 
 }
