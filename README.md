@@ -29,7 +29,7 @@ Feel free to make any changes to the UpdateQuality method and add any new code a
 
 
 
-Source:
+Source
 -------
 
-* Here is the full description of The Gilded Rose Kata I found in Bobby Johnson’s repository:
+* Here is the full description of The Gilded Rose Kata I found in Bobby Johnson’s [repository](https://github.com/NotMyself/GildedRose#gilded-rose-refactoring-kata)
