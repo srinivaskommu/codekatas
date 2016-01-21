@@ -32,31 +32,7 @@ public class GildedRoseTest
 
   }
 
-  // "Aged Brie" actually increases in Quality the older it gets
-  @Test
-  public void increase_Quality_of_Aged_Brie_as_it_gets_older()
-  {
-    Item[] items = new Item[] { new AgedBrieItem("Aged Brie", 2, 1) };
-    GildedRose app = new GildedRose(items);
-    app.updateQuality();
-    assertEquals("Aged Brie", app.items.get(0).getName());
-    assertEquals(1, app.items.get(0).getSellIn());
-    assertEquals(2, app.items.get(0).getQuality());
 
-  }
-
-  // "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
-  @Test
-  public void sulfuras_No_ChangeQuality_No_Sellin()
-  {
-    Item[] items = new Item[] { new SulfarItem("Sulfuras, Hand of Ragnaros", 0, 80) };
-    GildedRose app = new GildedRose(items);
-    app.updateQuality();
-    assertEquals("Sulfuras, Hand of Ragnaros", app.items.get(0).getName());
-    assertEquals(0, app.items.get(0).getSellIn());
-    assertEquals(80, app.items.get(0).getQuality());
-
-  }
 
   @Test
   public void should_not_lower_the_quality_below_zero()
@@ -70,33 +46,6 @@ public class GildedRoseTest
 
   }
 
-  @Test
-  public void concert_is_more_than_10_days_away()
-  {
-    Item[] items = new Item[] { new BackStageItem("Backstage passes to a TAFKAL80ETC concert", 15, 20) };
-    GildedRose app = new GildedRose(items);
-    app.updateQuality();
-    assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items.get(0).getName());
-    assertEquals(14, app.items.get(0).getSellIn());
-    assertEquals(21, app.items.get(0).getQuality());
-
-  }
-
-  @Test
-  public void concert_is_less_than_10_days_away_increase_quality_by_2()
-  {
-
-    Item[] items = new Item[] { new BackStageItem("Backstage passes to a TAFKAL80ETC concert", 10, 20) };
-    GildedRose app = new GildedRose(items);
-    app.updateQuality();
-    assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items.get(0).getName());
-    assertEquals(9, app.items.get(0).getSellIn());
-    assertEquals(22, app.items.get(0).getQuality());
-
-  }
-
-
-  
   @Test
   public void should_lower_the_quality_twice_as_fast_when_sell_in_date_has_passed() throws Exception {
     Item[] items = new Item[] { new Item("+5 Dexterity Vest", -1, 25)};
@@ -123,17 +72,6 @@ public class GildedRoseTest
     assertEquals(50, app.items.get(2).getQuality());
   }
   
-  @Test
-  public void conjured_Expect_Reduciton_In_Quaity()
-  {
 
-    Item[] items = new Item[] { new ConjuredItem("Conjured Mana Cake", 3, 6) };
-    GildedRose app = new GildedRose(items);
-    app.updateQuality();
-    assertEquals("Conjured Mana Cake", app.items.get(0).getName());
-    assertEquals(2, app.items.get(0).getSellIn());
-    assertEquals(4, app.items.get(0).getQuality());
-
-  }
 
 }
