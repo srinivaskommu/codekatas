@@ -2,6 +2,10 @@ package com.kata.apps.gildedrose;
 
 public class ItemWrapper extends Item
 {
+	int MAX_QUALITY = 50;
+	int DEFAULT_QUALITY_INCREASE = 1;
+	int DEFAULT_QUALITY_DECREASE = 1;
+	
 
 	public ItemWrapper(String name, int sellIn, int quality) 
 	{

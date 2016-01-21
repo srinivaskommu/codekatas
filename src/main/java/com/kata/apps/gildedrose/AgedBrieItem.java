@@ -11,9 +11,9 @@ public class AgedBrieItem extends ItemWrapper
   @Override
   public void increaseQuality()
   {
-    if (getQuality() < 50) 
+    if (getQuality() < MAX_QUALITY) 
     {
-        setQuality(getQuality() + 1);
+        setQuality(getQuality() + DEFAULT_QUALITY_INCREASE);
     }
 
   }
