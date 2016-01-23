@@ -1,4 +1,4 @@
-package com.kata.apps.gildedrose;
+package com.kata.apps.gildedrose.domain;
 
 public class BackStageItem extends ItemWrapper
 {

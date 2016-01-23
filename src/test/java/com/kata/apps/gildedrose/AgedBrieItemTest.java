@@ -4,6 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.kata.apps.gildedrose.domain.AgedBrieItem;
+import com.kata.apps.gildedrose.domain.ItemWrapper;
+
 public class AgedBrieItemTest 
 {
 	int quality;

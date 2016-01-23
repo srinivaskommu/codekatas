@@ -1,4 +1,6 @@
-package com.kata.apps.gildedrose;
+package com.kata.apps.gildedrose.domain;
+
+import com.kata.apps.gildedrose.Item;
 
 public class ItemWrapper extends Item
 {

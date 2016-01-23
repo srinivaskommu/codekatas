@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.kata.apps.gildedrose.domain.ItemWrapper;
+import com.kata.apps.gildedrose.domain.ItemWrapperFactory;
+
 public class GildedRose 
 {
 	static List<ItemWrapper> items;

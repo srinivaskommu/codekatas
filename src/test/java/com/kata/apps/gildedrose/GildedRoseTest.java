@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.kata.apps.gildedrose.domain.BackStageItem;
+
 public class GildedRoseTest
 {
 
