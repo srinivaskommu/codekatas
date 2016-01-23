@@ -4,17 +4,35 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class AgedBrieItemTest {
+public class AgedBrieItemTest 
+{
+	int quality;
+	int sellIn;
+
 	// "Aged Brie" actually increases in Quality the older it gets
 	@Test
-	public void increase_Quality_of_Aged_Brie_as_it_gets_older() {
-		Item[] items = new Item[] { new Item("Aged Brie", 2, 1) };
-		GildedRose app = new GildedRose(items);
-		app.updateQuality();
-		assertEquals("Aged Brie", app.items.get(0).getName());
-		assertEquals(1, app.items.get(0).getSellIn());
-		assertEquals(2, app.items.get(0).getQuality());
+	public void increaseQualityByOneForAgedBrieAsitgetsOlder() 
+	{
+		quality=1;	sellIn = 2;
+		ItemWrapper item = new AgedBrieItem("Aged Brie", sellIn, quality);
 
+		item.decreaseQuality();
+		item.decreaseSellIn();
+
+		assertEquals("Aged Brie", item.getName());
+		assertEquals(2, item.getQuality());
+
+	}
+	
+	@Test
+	public void decreaseSellInByOneForAgedBrieAsitgetsOlder() 
+	{
+		quality=1;	sellIn = 2;
+		ItemWrapper item = new AgedBrieItem("Aged Brie", sellIn, quality);
+
+		item.decreaseSellIn();
+		
+		assertEquals(1, item.getSellIn());
 	}
 
 }
