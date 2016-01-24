@@ -1,31 +1,28 @@
 package com.kata.apps.gildedrose;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kata.apps.gildedrose.domain.ItemControl;
-import com.kata.apps.gildedrose.domain.ItemWrapperFactory;
+import com.kata.apps.gildedrose.domain.ItemControlFactory;
+import static com.kata.apps.gildedrose.domain.ItemTypes.*;
 
 public class GildedRose 
 {
-	static List<ItemControl> items;
+	static Item[] itemsList;
 
 	public GildedRose(Item[] itemsList) 
 	{
-		items = new ArrayList<ItemControl>();
-		for (int i = 0; i < itemsList.length; i++) 
-		{
-			items.add(ItemWrapperFactory.buildItemWrapper(itemsList[i]));
-		}
-
+		this.itemsList = itemsList;
 	}
 
 	public static void updateQuality() 
 	{
-		for (ItemControl item : items) 
+		for (Item item : itemsList) 
 		{
-			item.decreaseQuality();
-			item.decreaseSellIn();
+			if(SULFURAS.getValue().equalsIgnoreCase(item.getName()))
+			{
+				ItemControl control = ItemControlFactory.buildItemControl(item);
+				control.controlItemQuality(item);
+			}
+
 		}
 	}
 

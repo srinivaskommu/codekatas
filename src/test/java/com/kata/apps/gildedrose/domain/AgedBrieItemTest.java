@@ -4,7 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.kata.apps.gildedrose.domain.AgedBrieItem;
+import com.kata.apps.gildedrose.Item;
+import com.kata.apps.gildedrose.domain.AgedBrieItemControl;
 import com.kata.apps.gildedrose.domain.ItemControl;
 
 public class AgedBrieItemTest 
@@ -17,25 +18,30 @@ public class AgedBrieItemTest
 	public void increaseQualityByOneForAgedBrieAsitgetsOlder() 
 	{
 		quality=1;	sellIn = 2;
-		ItemControl item = new AgedBrieItem("Aged Brie", sellIn, quality);
-
-		item.decreaseQuality();
-		item.decreaseSellIn();
-
+		Item item = new Item("Aged Brie", sellIn, quality);
+		
+		ItemControl itemControl = new AgedBrieItemControl();
+		itemControl.controlItemQuality(item);
+		itemControl.controlItemSellIn(item);
+		
 		assertEquals("Aged Brie", item.getName());
 		assertEquals(2, item.getQuality());
+		assertEquals(1, item.getSellIn());
 
 	}
 	
 	@Test
 	public void decreaseSellInByOneForAgedBrieAsitgetsOlder() 
 	{
-		quality=1;	sellIn = 2;
-		ItemControl item = new AgedBrieItem("Aged Brie", sellIn, quality);
-
-		item.decreaseSellIn();
+		quality=1;	sellIn = 5;
+		Item item = new Item("Aged Brie", sellIn, quality);
 		
-		assertEquals(1, item.getSellIn());
+		ItemControl itemControl = new AgedBrieItemControl();
+		itemControl.controlItemSellIn(item);
+		
+		assertEquals("Aged Brie", item.getName());
+		assertEquals(4, item.getSellIn());
 	}
-
+	
+	
 }
