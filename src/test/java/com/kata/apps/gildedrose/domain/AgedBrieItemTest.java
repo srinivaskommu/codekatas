@@ -1,46 +1,46 @@
 package com.kata.apps.gildedrose.domain;
 
-import static org.junit.Assert.assertEquals;
+import static com.kata.apps.gildedrose.ItemBuilder.anItem;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
 import com.kata.apps.gildedrose.Item;
-import com.kata.apps.gildedrose.domain.AgedBrieItemControl;
-import com.kata.apps.gildedrose.domain.ItemControl;
 
 public class AgedBrieItemTest 
 {
-	int quality;
-	int sellIn;
+	ItemControl agedBrieControl = new AgedBrieItemControl();
+	String AGED_BRIE = ItemTypes.AGED_BRIE.name();
 
-	// "Aged Brie" actually increases in Quality the older it gets
 	@Test
-	public void increaseQualityByOneForAgedBrieAsitgetsOlder() 
+	public void increaseQualityByOneForAgedBrieAsItgetsOlder() 
 	{
-		quality=1;	sellIn = 2;
-		Item item = new Item("Aged Brie", sellIn, quality);
 		
-		ItemControl itemControl = new AgedBrieItemControl();
-		itemControl.controlItemQuality(item);
-		itemControl.controlItemSellIn(item);
+		Item agedBrie = anItem().
+					withName(AGED_BRIE).
+					withQuality(1).
+					withSellIn(1).
+					build();
 		
-		assertEquals("Aged Brie", item.getName());
-		assertEquals(2, item.getQuality());
-		assertEquals(1, item.getSellIn());
+
+		agedBrieControl.controlItemQuality(agedBrie);
+		assertThat(agedBrie.getQuality(), is(2));
 
 	}
 	
 	@Test
 	public void decreaseSellInByOneForAgedBrieAsitgetsOlder() 
 	{
-		quality=1;	sellIn = 5;
-		Item item = new Item("Aged Brie", sellIn, quality);
+		Item agedBrie = anItem().
+				withName(AGED_BRIE).
+				withQuality(1).
+				withSellIn(5).
+				build();
 		
-		ItemControl itemControl = new AgedBrieItemControl();
-		itemControl.controlItemSellIn(item);
 		
-		assertEquals("Aged Brie", item.getName());
-		assertEquals(4, item.getSellIn());
+		agedBrieControl.controlItemSellIn(agedBrie);
+		assertThat(agedBrie.getSellIn(), is(4));
 	}
 	
 	

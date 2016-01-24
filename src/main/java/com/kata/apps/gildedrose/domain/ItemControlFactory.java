@@ -7,7 +7,6 @@ import static com.kata.apps.gildedrose.domain.ItemTypes.*;
 public class ItemControlFactory 
 {
 
-	
 	public static ItemControl buildItemControl(Item item) 
 	{
 		if(BACKSTAGE_PASS.getValue().equals(item.getName()))

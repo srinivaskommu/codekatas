@@ -11,16 +11,13 @@ public enum ItemTypes
 	
 	ItemTypes(String itemType)
 	{
-		this.setValue(itemType);
+		this.value = itemType;
 	}
 
-	public String getValue() {
+	public String getValue() 
+	{
 		return value;
 	}
 
-	private void setValue(String value) 
-	{
-		this.value = value;
-	}
 	
 }

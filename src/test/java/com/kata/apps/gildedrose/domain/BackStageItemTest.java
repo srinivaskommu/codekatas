@@ -4,11 +4,13 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.kata.apps.gildedrose.GildedRose;
 import com.kata.apps.gildedrose.Item;
 
 public class BackStageItemTest 
 {
+	ItemControl backStageControl = new BackStageItemControl();
+	String BACKSTAGE = ItemTypes.AGED_BRIE.name();
+	
 	// increases quality by 1 when concert is more than 10 days away
 	// increases q by 2 when concert is between 5 and 10 days away
 	// increases q by 3 when concert is between 1 and 5 days away
@@ -20,9 +22,9 @@ public class BackStageItemTest
 	{
 		Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20) ;
 		
-		ItemControl itemControl = new BackStageItemControl();
-		itemControl.controlItemQuality(item);
-		itemControl.controlItemSellIn(item);
+		
+		backStageControl.controlItemQuality(item);
+		backStageControl.controlItemSellIn(item);
 		
 		assertEquals("Backstage passes to a TAFKAL80ETC concert", item.getName());
 		assertEquals(14, item.getSellIn());
@@ -34,9 +36,9 @@ public class BackStageItemTest
 	{
 
 		Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20) ;
-		ItemControl itemControl = new BackStageItemControl();
-		itemControl.controlItemQuality(item);
-		itemControl.controlItemSellIn(item);
+		
+		backStageControl.controlItemQuality(item);
+		backStageControl.controlItemSellIn(item);
 		
 		assertEquals("Backstage passes to a TAFKAL80ETC concert", item.getName());
 		assertEquals(9, item.getSellIn());
@@ -49,19 +51,19 @@ public class BackStageItemTest
 	  {
 
 	    Item more10DaysAway = new Item("Backstage passes to a TAFKAL80ETC concert", 15, 50);
-		ItemControl itemControl = new BackStageItemControl();
-		itemControl.controlItemQuality(more10DaysAway);
-		itemControl.controlItemSellIn(more10DaysAway);
+		
+		backStageControl.controlItemQuality(more10DaysAway);
+		backStageControl.controlItemSellIn(more10DaysAway);
 	    assertEquals(50, more10DaysAway.getQuality());
 
 	    Item correct10DaysAway = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49);
-		itemControl.controlItemQuality(more10DaysAway);
-		itemControl.controlItemSellIn(more10DaysAway);
+		backStageControl.controlItemQuality(more10DaysAway);
+		backStageControl.controlItemSellIn(more10DaysAway);
 	    assertEquals(50,correct10DaysAway.getQuality());
 
 	    Item correct5DaysAway = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48);
-		itemControl.controlItemQuality(more10DaysAway);
-		itemControl.controlItemSellIn(more10DaysAway);
+		backStageControl.controlItemQuality(more10DaysAway);
+		backStageControl.controlItemSellIn(more10DaysAway);
 	    assertEquals(50, correct5DaysAway.getQuality());
 	  }
 

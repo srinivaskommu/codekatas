@@ -10,7 +10,7 @@ public class SulfarItemTest
 {
 	  // "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
 	  @Test
-	  public void sulfuras_No_ChangeQuality_No_Sellin()
+	  public void noChangeInQualityAndSellinForSulfuras()
 	  {
 		Item item =  new Item("Sulfuras, Hand of Ragnaros", 0, 80) ;
 		
