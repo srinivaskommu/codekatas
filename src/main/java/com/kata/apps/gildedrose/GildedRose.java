@@ -6,14 +6,14 @@ import static com.kata.apps.gildedrose.domain.ItemTypes.*;
 
 public class GildedRose 
 {
-	static Item[] itemsList;
+	Item[] itemsList;
 
 	public GildedRose(Item[] itemsList) 
 	{
 		this.itemsList = itemsList;
 	}
 
-	public static void updateQuality() 
+	public void updateQuality() 
 	{
 		for (Item item : itemsList) 
 		{
