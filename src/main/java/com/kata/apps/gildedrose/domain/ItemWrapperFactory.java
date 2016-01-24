@@ -9,7 +9,7 @@ public class ItemWrapperFactory
 	public static final String AGED_BRIE_NAME = "Aged Brie";
 	public static final String CONJURED_NAME = "Conjured Mana Cake";
 	
-	public static ItemWrapper buildItemWrapper(Item item) 
+	public static ItemControl buildItemWrapper(Item item) 
 	{
 
 		if(BACKSTAGE_PASS_NAME.equalsIgnoreCase(item.getName()))
@@ -25,7 +25,7 @@ public class ItemWrapperFactory
 			return new ConjuredItem(CONJURED_NAME, item.sellIn, item.quality);
 
 		
-		return new ItemWrapper(item.name, item.sellIn, item.quality);
+		return new ItemControl(item.name, item.sellIn, item.quality);
 	}
 	
 	

@@ -1,6 +1,6 @@
 package com.kata.apps.gildedrose.domain;
 
-public class BackStageItem extends ItemWrapper
+public class BackStageItem extends ItemControl
 {
 
   public BackStageItem(String name, int sellIn, int quality)

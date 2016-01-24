@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.kata.apps.gildedrose.domain.ItemWrapper;
+import com.kata.apps.gildedrose.domain.ItemControl;
 
 public class ItemProcessorImpl 
 {
-	static List<ItemWrapper> items;
+	static List<ItemControl> items;
 	
 	public static void main(String[] args) 
 	{
 		int choice = 0;
 		Scanner input = new Scanner(System.in);
-		items = new ArrayList<ItemWrapper>();
+		items = new ArrayList<ItemControl>();
 		System.out.println("***************GILDED ROSA********************");
 
 		do{
@@ -42,7 +42,7 @@ public class ItemProcessorImpl
 
 	private static void displayInventory() 
 	{
-		for(ItemWrapper item:items)
+		for(ItemControl item:items)
 		{
 			System.out.println("Item Name = "+item.getName());
 			System.out.println("Item sellIn = "+item.getSellIn());
@@ -62,7 +62,7 @@ public class ItemProcessorImpl
 		System.out.println("Enter Item quality");
 		int quality = input.nextInt();
 		
-		items.add(new ItemWrapper(name,sellIn,quality));
+		items.add(new ItemControl(name,sellIn,quality));
 		
 	}
 }

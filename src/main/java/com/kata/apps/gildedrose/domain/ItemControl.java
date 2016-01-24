@@ -2,16 +2,21 @@ package com.kata.apps.gildedrose.domain;
 
 import com.kata.apps.gildedrose.Item;
 
-public class ItemWrapper extends Item
+public class ItemControl extends Item
 {
 	int MAX_QUALITY = 50;
 	int DEFAULT_QUALITY_INCREASE = 1;
 	int DEFAULT_QUALITY_DECREASE = 1;
 	
 
-	public ItemWrapper(String name, int sellIn, int quality) 
+	public ItemControl(String name, int sellIn, int quality) 
 	{
 		super(name, sellIn, quality);
+	}
+	
+	public void updateQuality()
+	{
+		
 	}
 	
 	public void decreaseQuality()

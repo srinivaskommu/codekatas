@@ -1,6 +1,6 @@
 package com.kata.apps.gildedrose.domain;
 
-public class ConjuredItem extends ItemWrapper
+public class ConjuredItem extends ItemControl
 {
   public ConjuredItem(String name, int sellIn, int quality)
   {
