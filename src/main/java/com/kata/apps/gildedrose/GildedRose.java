@@ -17,7 +17,7 @@ public class GildedRose
 	{
 		for (Item item : itemsList) 
 		{
-			if(SULFURAS.getValue().equalsIgnoreCase(item.getName()))
+			if(!SULFURAS.getValue().equalsIgnoreCase(item.getName()))
 			{
 				ItemControl control = ItemControlFactory.buildItemControl(item);
 				control.controlItemQuality(item);

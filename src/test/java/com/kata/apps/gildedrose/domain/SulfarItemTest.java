@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.kata.apps.gildedrose.GildedRose;
 import com.kata.apps.gildedrose.Item;
 
 public class SulfarItemTest 
@@ -14,8 +15,10 @@ public class SulfarItemTest
 	  {
 		Item item =  new Item("Sulfuras, Hand of Ragnaros", 0, 80) ;
 		
-	    assertEquals("Sulfuras, Hand of Ragnaros", item.getName());
-	    assertEquals(0, item.getSellIn());
+		GildedRose store = new GildedRose(new Item[]{item});
+		store.updateQuality();
+
+		assertEquals(0, item.getSellIn());
 	    assertEquals(80, item.getQuality());
 
 	  }
